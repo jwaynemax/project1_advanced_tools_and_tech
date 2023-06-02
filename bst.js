@@ -45,3 +45,11 @@ function insert(data) {
       }
    }
 }
+
+function inOrder(node) {
+   if (node !== null) {
+      inOrder(node.left);
+      putstr(node.show() + " ");
+      inOrder(node.right);
+   }
+}
