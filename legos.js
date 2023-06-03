@@ -21,6 +21,7 @@ function LegoPile () {
   }
   this.insert = insert;
   this.hasBrick = hasBrick;
+  this.count = count;
 }
 
 function insert(brick) {
@@ -55,10 +56,15 @@ function hasBrick(size, color) {
   }
 }
 
-var legoPile = new LegoPile();
-legoPile.insert(new Brick(4, "Blue"));
-legoPile.insert(new Brick(2, "Blue"));
-legoPile.insert(new Brick(5, "Blue"));
-legoPile.insert(new Brick(6, "Blue"));
+function count() {
+  var red = this.legoColors["Red"].count();
+  var green = this.legoColors["Green"].count();
+  var blue = this.legoColors["Blue"].count();
+  var yellow = this.legoColors["Yellow"].count();
+  var black = this.legoColors["Black"].count();
+  var white = this.legoColors["White"].count();
 
-console.log(legoPile.legoColors["Blue"].count());
+  var count = red + green + blue + yellow + black + white;
+
+  return count;
+}
