@@ -17,6 +17,7 @@ function BST() {
    this.insert = insert;
    this.inOrder = inOrder;
    this.find = find;
+   this.count = count;
 }
 
 function insert(data) {
@@ -66,4 +67,20 @@ function find(data) {
         }
      }
      return current;
+}
+
+function count() {
+  var node = this.root;
+
+  var total = countSubtree(node);
+
+  function countSubtree(node) {
+    if (node !== null) {
+       return 1 + countSubtree(node.left) + countSubtree(node.right);
+    } else {
+      return 0;
+    }
+  }
+
+  return total;
 }

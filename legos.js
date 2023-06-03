@@ -54,3 +54,11 @@ function hasBrick(size, color) {
      return false;
   }
 }
+
+var legoPile = new LegoPile();
+legoPile.insert(new Brick(4, "Blue"));
+legoPile.insert(new Brick(2, "Blue"));
+legoPile.insert(new Brick(5, "Blue"));
+legoPile.insert(new Brick(6, "Blue"));
+
+console.log(legoPile.legoColors["Blue"].count());
