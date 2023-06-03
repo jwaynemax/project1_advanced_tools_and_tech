@@ -26,7 +26,6 @@ function insert(brick) {
   var current = brick.color;
   if (current == "Red") {
     this.legoColors["Red"].insert(brick);
-    break;
   }
   if (current == "Green") {
     this.legoColors["Green"].insert(brick);
@@ -44,3 +43,8 @@ function insert(brick) {
     this.legoColors["White"].insert(brick);
   }
 }
+
+const legoPile = new LegoPile();
+legoPile.insert(new Brick(4, "Red"));
+
+console.log(legoPile.legoColors["Red"].root.data);
