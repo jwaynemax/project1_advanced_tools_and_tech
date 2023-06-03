@@ -58,3 +58,13 @@ describe('testInsertSeveralBricksOfOneColor', function () {
       assert.equal(legoPile.legoColors["Red"].root.right.data, brick2.size);
     });
 });
+
+describe('testHasBlock', function() {
+  it('calls hasBlock which calls find in BST to check is a value exists', function () {
+    const legoPile = new LegoPile();
+    legoPile.insert(new Brick(4, "Blue"));
+
+    assert.equal(legoPile.hasBrick(4, "Yellow"), false);
+    assert.equal(legoPile.hasBrick(4, "Blue"), true);
+  });
+});

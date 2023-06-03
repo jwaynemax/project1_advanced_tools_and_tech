@@ -54,8 +54,3 @@ function hasBrick(size, color) {
      return false;
   }
 }
-
-const legoPile = new LegoPile();
-legoPile.insert(new Brick(4, "Blue"));
-
-console.log(legoPile.hasBrick(4, "Yellow"));
