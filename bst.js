@@ -16,6 +16,7 @@ function BST() {
    this.root = null;
    this.insert = insert;
    this.inOrder = inOrder;
+   this.find = find;
 }
 
 function insert(data) {
@@ -52,4 +53,17 @@ function inOrder(node) {
       console.log(node.show() + " ");
       inOrder(node.right);
    }
+}
+
+function find(data) {
+     var current = this.root;
+     while (current && current.data != data) {
+        if (data < current.data) {
+           current = current.left;
+        }
+        else {
+           current = current.right;
+        }
+     }
+     return current;
 }

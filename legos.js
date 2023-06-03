@@ -20,6 +20,7 @@ function LegoPile () {
     "White": new BST()
   }
   this.insert = insert;
+  this.hasBrick = hasBrick;
 }
 
 function insert(brick) {
@@ -44,7 +45,17 @@ function insert(brick) {
   }
 }
 
-const legoPile = new LegoPile();
-legoPile.insert(new Brick(4, "Red"));
+function hasBrick(size, color) {
+  var found = (this.legoColors[color].find(size));
+  if (found !== null) {
+     return true
+  }
+  else {
+     return false;
+  }
+}
 
-console.log(legoPile.legoColors["Red"].root.data);
+const legoPile = new LegoPile();
+legoPile.insert(new Brick(4, "Blue"));
+
+console.log(legoPile.hasBrick(4, "Yellow"));
