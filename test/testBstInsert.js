@@ -6,11 +6,9 @@ const Brick = lego.Brick;
 const BST = bst.BST;
 
 
-const tree = BST();
-const brick0 = Brick(4, "blue");
+const tree = new BST();
+const brick0 = new Brick(4, "blue");
 
-// tree.insert(16);
+tree.insert(brick0);
 
-console.log(brick0);
-
-// console.log(tree);
+console.log(tree.root.data);

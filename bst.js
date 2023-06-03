@@ -15,11 +15,11 @@ function show() {
 function BST() {
    this.root = null;
    this.insert = insert;
-   this.inOrder = inOrder;
+   //this.inOrder = inOrder;
 }
 
 function insert(data) {
-   var n = new Node(data, null, null);
+   var n = new Node(data.size, null, null);
    if (this.root === null) {
       this.root = n;
    }
@@ -28,7 +28,7 @@ function insert(data) {
       var parent;
       while (true) {
          parent = current;
-         if (data < current.data) {
+         if (data.size < current.data) {
             current = current.left;
             if (current === null) {
                parent.left = n;
@@ -49,7 +49,7 @@ function insert(data) {
 function inOrder(node) {
    if (node !== null) {
       inOrder(node.left);
-      putstr(node.show() + " ");
+      console.log(node.show() + " ");
       inOrder(node.right);
    }
 }
