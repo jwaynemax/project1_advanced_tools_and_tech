@@ -11,4 +11,9 @@ const brick0 = new Brick(4, "blue");
 
 tree.insert(brick0);
 
-console.log(tree.root.data);
+describe('testBSTInsert', function () {
+    it('validates the correct root node', function () {
+
+      assert.equal(tree.root.data, brick0.size);
+    });
+});

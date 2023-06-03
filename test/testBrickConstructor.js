@@ -4,7 +4,10 @@ const Brick = lego.Brick;
 
 describe('createLego', function () {
     it('should create a lego with specified size and color', function () {
+      const brick0 = new Brick(3, "blue");
 
-      assert.equal(Brick(3, "blue"), "size is: 3, color is: blue");
+      assert.equal(brick0.size, 3);
+      assert.equal(brick0.color, "blue");
+
     });
 });
